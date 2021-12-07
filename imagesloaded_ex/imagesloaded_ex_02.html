@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Library | imagesLoaded</title>
+    <style>
+      p {
+        text-align: center;
+      }
+      img {
+        width: 280px;
+        display: none;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="imagesloaded.pkgd.min.js"></script>
+    <script>
+      $( document ).ready( function() {
+        $( '#jbImg' ).imagesLoaded( function() {
+          $( '#jbImg img' ).fadeIn( 2000 );
+		  $( '#jbImg' ).after( '<p>All images are loaded.</p>' );		  
+        } );
+      } );
+    </script>
+  </head>
+  <body>
+    <p id="jbImg">
+      <img src="image-1.jpg">
+      <img src="image-2.jpg">
+    </p>
+  </body>
+</html>
